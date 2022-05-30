@@ -49,18 +49,14 @@ button {
   font-size: 24px;
   border-radius: 10px;
   padding: 0px;
+  line-height: 71px;
 }
 
 #zero {
   width: 158px;
   display: flex;
   align-items: center;
-}
-
-#zero-text {
-  flex: 0 0 auto;
-  width: 75px;
-  text-align: center;
+  padding-left: 28px;
 }
 
 .operator {
@@ -69,6 +65,14 @@ button {
 
 #equals {
   background-color:azure;
+}
+
+.operator, #equals, #plus-minus {
+  font-size: 30px;
+}
+
+#clear, #percent {
+  font-size: 26px;
 }
 
 #clear {
