@@ -11,22 +11,30 @@ body {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  padding: 16px;
+  background-color: pink;
+  border-radius: 8px;
+  border-color: black;
+  border-style: solid;
+  border-width: 2px;
 }
 
 #display-bar {
   flex: 0 0 auto;
   height: 58px;
   font-size: 24px;
-  text-align: center;
+  text-align: right;
+  background-color: white;
   border-style: solid;
   border-width: 1px;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
 }
 
 #display-text {
-  padding-bottom: 5px;
+  padding: 0px 8px 5px 8px;
 }
 
 .button-row {
@@ -39,8 +47,25 @@ button {
   width: 50px;
   height: 50px;
   font-size: 18px;
+  border-radius: 5px;
 }
 
 #zero {
   width: 108px;
+}
+
+.operator {
+  background-color: beige;
+}
+
+#equals {
+  background-color:azure;
+}
+
+#clear {
+  background-color: crimson;
+}
+
+.special {
+  background-color: lightgray;
 }
