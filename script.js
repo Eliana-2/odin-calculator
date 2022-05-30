@@ -33,3 +33,38 @@ function operate(operator, num1, num2)
   }
 }
 
+/*function isSpecial(string) {
+  switch(string)
+  {
+    case `AC`:
+    case `+/-`:
+    case `%`:
+    case `=`:
+      return true;
+    default:
+      return false;
+  }
+}
+
+function isOperator(string) {
+  switch(string)
+  {
+    case `+`:
+    case`-`:
+    case `x`:
+    case `/`:
+      return true;
+    default:
+      return false;
+  }
+}
+
+function process(e)
+{
+  e.target.textContent = `moo`;
+}
+
+const buttons = document.querySelectorAll(`button`);
+buttons.forEach((button) => {
+  button.addEventListener(`click`, process);
+});*/ 
