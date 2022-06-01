@@ -24,7 +24,6 @@ body {
   flex-direction: column;
   gap: 8px;
   padding: 16px;
-  background-color: pink;
   border-radius: 12px;
   border-color: black;
   border-style: solid;
@@ -84,22 +83,28 @@ button {
   background-color: beige;
 }
 
-#equals {
+.equals {
   background-color:azure;
 }
 
-.operator, #equals, #plus-minus {
+.operator, .equals, .plus-minus {
   font-size: 30px;
 }
 
-#clear, #percent {
+.clear, .moo {
   font-size: 26px;
 }
 
-#clear {
+.clear {
   background-color: crimson;
 }
 
 .special {
   background-color: lightgray;
+}
+
+.moo-button {
+  background-color: black;
+  color: white;
+  font-size: 24px;
 }

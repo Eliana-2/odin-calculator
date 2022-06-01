@@ -41,8 +41,6 @@ function specialOperate(num1, operator)
       return ``;
     case `plus-minus`:
       return num1 * -1;
-    case `percent`:
-      return (num1 * 100) + `%`;
     case `equals`:
       return num1;
   }
@@ -53,7 +51,6 @@ function isSpecial(string) {
   {
     case `clear`:
     case `plus-minus`:
-    case `percent`:
     case `equals`:
       return true;
     default:
@@ -70,7 +67,6 @@ function isOperator(string) {
     case `divide`:
     case `clear`:
     case `plus-minus`:
-    case `percent`:
     case `equals`:
       return true;
     default:
@@ -80,7 +76,6 @@ function isOperator(string) {
 
 function hasDecimal(string)
 {
-  console.log(string.split(""));
   return (string.split("").includes(`.`)) ? true: false;
 }
 
@@ -91,8 +86,8 @@ function process(event)
   const num2 = document.querySelector(`#number-2`);
   const id = event.target.getAttribute(`id`);
   const buttonText = event.target.textContent;
-  console.log(buttonText);
 
+  if(id === `moo`) {return setMoo();}
   if(!isOperator(id)) {
     if(operator.textContent === ``) {
       if(!(hasDecimal(num1.textContent) && buttonText === `.`)) {num1.textContent += buttonText;}}
@@ -115,7 +110,101 @@ function process(event)
   }
 }
 
+function setMoo()
+{
+  const num1 = document.querySelector(`#number-1`);
+
+  num1.textContent = `MOOOOOO`;
+  num1.classList.toggle(`moo-display`);
+
+  buttons.forEach((button) => {
+    if(button.getAttribute(`id`) === `moo`) {
+      button.textContent = `Moo!`;
+    }
+    else {
+      button.textContent = `moo`;
+    }
+
+    button.classList.toggle(`moo-button`)
+  })
+}
+
+function assignText(elemID)
+{
+  switch(elemID)
+  {
+    case `clear`:
+      return `AC`;
+    case `plus-minus`:
+      return `\u00B1`;
+    case `moo`:
+      return `Moo?`;
+    case `divide`:
+      return `\u00F7`;
+    case `seven`:
+      return `7`;
+    case `eight`:
+      return `8`;
+    case `nine`:
+      return `9`;
+    case `multiply`:
+      return `\u00D7`;
+    case `four`:
+      return `4`;
+    case `five`:
+      return `5`;
+    case `six`:
+      return `6`;
+    case `subtract`:
+      return `\u2212`;
+    case `one`:
+      return `1`;
+    case `two`:
+      return `2`;
+    case `three`:
+      return `3`;
+    case `add`:
+      return `\u002B`;
+    case `zero`:
+      return `0`;
+    case `decimal`:
+      return `.`;
+    case `equals`:
+      return `\u003D`;
+  }
+}
+
+function undoMoo()
+{
+  const num1 = document.querySelector(`#number-1`);
+
+  num1.textContent = '';
+  num1.classList.toggle(`moo-display`);
+
+  buttons.forEach((button) => {
+    button.textContent = assignText(button.getAttribute(`id`));
+    button.classList.toggle(`moo-button`);
+  })
+}
+
+function cowProcess(event)
+{
+
+  if(event.target.getAttribute(`id`) === `moo`)
+  {
+    return undoMoo();
+  }
+}
+
+function doSomething(event)
+{
+  console.log(event.target.className.split(" "));
+
+  if(event.target.className.split(" ").includes(`moo-button`)) {cowProcess(event);}
+  else {process(event);}
+}
+
 const buttons = document.querySelectorAll(`button`);
 buttons.forEach((button) => {
-  button.addEventListener(`click`, process);
+  button.addEventListener(`click`, doSomething);
 });
