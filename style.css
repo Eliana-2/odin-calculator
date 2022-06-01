@@ -35,6 +35,9 @@ body {
 
 #display-text {
   padding: 0px 8px 5px 8px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
 }
 
 .button-row {
