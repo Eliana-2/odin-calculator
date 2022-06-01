@@ -4,7 +4,19 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 75vh;
+  height: 100vh;
+  padding: 32px;
+}
+
+#background-container {
+  background-image: url("images/barn.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  width: 1538px;
+  height: 1208px;
+  flex: 0 0 auto;
 }
 
 #content {
@@ -17,6 +29,12 @@ body {
   border-color: black;
   border-style: solid;
   border-width: 2px;
+  width: 324px;
+  height: 515px;
+  margin: 555px;
+  background-image: url("images/cow-print.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #display-bar {
