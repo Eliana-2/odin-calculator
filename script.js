@@ -87,7 +87,10 @@ function process(event)
   const id = event.target.getAttribute(`id`);
   const buttonText = event.target.textContent;
 
-  if(id === `moo`) {return setMoo();}
+  if(id === `moo`) {
+    mooing.currentTime = 0;
+    mooing.play();
+    return setMoo();}
   if(!isOperator(id)) {
     if(operator.textContent === ``) {
       if(!(hasDecimal(num1.textContent) && buttonText === `.`)) {num1.textContent += buttonText;}}
@@ -189,6 +192,8 @@ function undoMoo()
 
 function cowProcess(event)
 {
+  mooing.currentTime = 0;
+  mooing.play();
 
   if(event.target.getAttribute(`id`) === `moo`)
   {
@@ -208,3 +213,5 @@ const buttons = document.querySelectorAll(`button`);
 buttons.forEach((button) => {
   button.addEventListener(`click`, doSomething);
 });
+
+const mooing = document.querySelector(`#mooing`);
